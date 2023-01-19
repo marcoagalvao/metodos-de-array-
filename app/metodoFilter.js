@@ -1,5 +1,6 @@
 const botoes = document.querySelectorAll('.btn')
 botoes.forEach(btn => btn.addEventListener('click', filtrarLivros))
+const elementoComValorTotalDeLivrosDisponiveis = document.getElementById('valor_total_livros_disponiveis')
 
 function filtrarLivros(){
     const elementoBtn = document.getElementById(this.id)
@@ -13,11 +14,11 @@ function filtrarLivros(){
 }
 
 function filtrarPorCategoria(tipoBotao) {
-    return livros.filter(livro => livro.categoria == tipoBotao)
+    return livrosComDesconto.filter(livro => livro.categoria == tipoBotao)
 }
 
 function filtrarPorDisponibilidade() {
-    return livros.filter(livro => livro.quantidade > 0)
+    return livrosComDesconto.filter(livro => livro.quantidade > 0)
 }
 
 function exibirValorTotalDosLivrosDisponiveisNaTela(valorTotal) {
